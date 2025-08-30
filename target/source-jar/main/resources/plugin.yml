@@ -1,0 +1,84 @@
+name: ModelHunt
+version: '${project.version}'
+main: com.modelhunt.ModelHuntPlugin
+api-version: '1.21'
+description: Advanced model hunting plugin with ModelEngine and MythicMobs integration
+author: ModelHunt Team
+website: https://github.com/modelhunt/plugin
+
+depend:
+  - ModelEngine
+  - MythicMobs
+
+softdepend:
+  - PlaceholderAPI
+  - Vault
+
+commands:
+  modelhunt:
+    description: Main ModelHunt command
+    aliases: [mh, hunt, modelh]
+    permission: hunt.admin.use
+    permission-message: "§cYou don't have permission to use this command!"
+
+permissions:
+  hunt.*:
+    description: All ModelHunt permissions
+    default: false
+    children:
+      hunt.click: true
+      hunt.view: true
+      hunt.stats: true
+      hunt.admin.*: false
+  
+  hunt.click:
+    description: Allows clicking on hunt models
+    default: true
+  
+  hunt.view:
+    description: Allows viewing hunt information
+    default: true
+  
+  hunt.stats:
+    description: Allows viewing hunt statistics
+    default: true
+  
+  hunt.admin.*:
+    description: All admin permissions
+    default: false
+    children:
+      hunt.admin.use: true
+      hunt.admin.create: true
+      hunt.admin.delete: true
+      hunt.admin.edit: true
+      hunt.admin.reload: true
+      hunt.admin.list: true
+      hunt.admin.teleport: true
+  
+  hunt.admin.use:
+    description: Use admin commands
+    default: op
+  
+  hunt.admin.create:
+    description: Create new hunt locations
+    default: op
+  
+  hunt.admin.delete:
+    description: Delete hunt locations
+    default: op
+  
+  hunt.admin.edit:
+    description: Edit hunt locations
+    default: op
+  
+  hunt.admin.reload:
+    description: Reload plugin configuration
+    default: op
+  
+  hunt.admin.list:
+    description: List all hunt locations
+    default: op
+  
+  hunt.admin.teleport:
+    description: Teleport to hunt locations
+    default: op

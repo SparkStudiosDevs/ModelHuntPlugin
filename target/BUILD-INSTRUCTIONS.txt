@@ -1,0 +1,21 @@
+# ModelHunt Plugin Source
+
+This is the source code for the ModelHunt plugin.
+
+## To build on your server:
+
+1. Ensure you have Maven installed
+2. Run: mvn clean package
+3. The JAR file will be created in the target directory
+
+## Dependencies Required:
+- Paper 1.21.4
+- ModelEngine
+- MythicMobs
+- PlaceholderAPI (optional)
+- Vault (optional)
+
+## Installation:
+1. Place the built JAR in your plugins folder
+2. Restart your server
+3. Configure using /hunt gui command

@@ -1,0 +1,12 @@
+{
+  "name": "modelhunt-plugin",
+  "version": "1.0.0",
+  "description": "Minecraft ModelHunt Plugin Builder",
+  "main": "build.js",
+  "scripts": {
+    "build": "node build.js"
+  },
+  "keywords": ["minecraft", "plugin", "paper", "modelengine", "mythicmobs"],
+  "author": "ModelHunt Plugin",
+  "license": "MIT"
+}

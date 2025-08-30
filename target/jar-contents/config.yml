@@ -1,0 +1,64 @@
+# ModelHunt Plugin Configuration
+# Advanced model hunting with ModelEngine and MythicMobs integration
+
+# General Settings
+cooldown-seconds: 300  # 5 minutes cooldown between clicks
+debug: false  # Enable debug logging
+
+# Messages
+messages:
+  no-permission: "§cYou don't have permission to participate in hunts!"
+  cooldown: "§cYou must wait {time} seconds before clicking this model again! (%modelhunt_cooldown_{location}%)"
+  hunt-completed: "§a[Hunt] §7You successfully completed a hunt!"
+  model-not-found: "§c[Hunt] §7Hunt model not found!"
+  location-created: "§a[Hunt] §7Hunt location created successfully!"
+  location-deleted: "§a[Hunt] §7Hunt location deleted successfully!"
+  config-reloaded: "§a[Hunt] §7Configuration reloaded successfully!"
+  gui-opened: "§a[Hunt] §7Configuration GUI opened!"
+  invalid-input: "§c[Hunt] §7Invalid input! Please try again."
+  session-timeout: "§c[Hunt] §7Input session timed out. Please try again."
+
+# Example hunt locations (remove or modify as needed)
+hunt-locations:
+  example-hunt-1:
+    world: "world"
+    x: 100.0
+    y: 65.0
+    z: 100.0
+    yaw: 0.0
+    pitch: 0.0
+    model-id: "easter_egg"  # ModelEngine model ID
+    mythic-mob-type: "EasterBunny"  # MythicMobs mob type
+    click-message: "§a[Hunt] §7You found an Easter Egg! Happy hunting!"
+    completion-message: "§6[Hunt] §7Congratulations! You completed the Easter hunt!"
+    respawn-time-seconds: 1800  # 30 minutes
+    click-radius: 3.0  # Maximum distance for clicking
+    rewards:
+      - "item:DIAMOND*3"  # 3 diamonds
+      - "exp:100"  # 100 experience points
+      - "money:50.0"  # $50 (requires economy plugin)
+    commands:
+      - "say {player} found an Easter Egg! (Total hunts: %modelhunt_total_hunts%)"  # Broadcast to server
+      - "title {player} title {\"text\":\"Hunt Complete!\",\"color\":\"gold\"}"
+      - "tellraw {player} {\"text\":\"You have completed %modelhunt_total_hunts% hunts!\",\"color\":\"green\"}"
+
+  example-hunt-2:
+    world: "world"
+    x: -50.0
+    y: 70.0
+    z: 200.0
+    yaw: 180.0
+    pitch: 0.0
+    model-id: "treasure_chest"
+    mythic-mob-type: "TreasureGuardian"
+    click-message: "§b[Hunt] §7You discovered a hidden treasure chest!"
+    completion-message: "§e[Hunt] §7The treasure is yours to claim!"
+    respawn-time-seconds: 3600  # 1 hour
+    click-radius: 2.5
+    rewards:
+      - "item:GOLD_INGOT*5"
+      - "item:EMERALD*2"
+      - "exp:200"
+    commands:
+      - "give {player} minecraft:enchanted_golden_apple 1"
+      - "tellraw @a {\"text\":\"{player} found a treasure chest! (%modelhunt_total_hunts% total hunts)\",\"color\":\"yellow\"}"
